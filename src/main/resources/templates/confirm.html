@@ -28,8 +28,13 @@
     <ul th:if="${#fields.hasErrors('all')}">
       <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
     </ul>
+
     <div class="col-sm-12">
       <div class="sub-title">お客様情報</div>
+      <!-- お客様情報のエラーメッセージ -->
+
+
+      
       <table class="table table-bordered">
         <col span="1" style="background-color: #FFFFFF;">
         <col span="2" style="background-color: #FFFFFF;">
@@ -42,12 +47,12 @@
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
         </tr>
         <tr>
-          <th>連絡先TEL</th>
+          <th>連絡先TEL(ハイフンなし半角数字)</th>
           <td><span th:text="*{tel}"></span></td>
           <input type="hidden" name="tel" id="tel" th:value="*{tel}"/>
         </tr>
         <tr>
-          <th>連絡先メールアドレス</th>
+          <th>連絡先メールアドレス(ハイフンなし半角数字)</th>
           <td><span th:text="*{email}"></span></td>
           <input type="hidden" name="email" id="email" th:value="*{email}"/>
         </tr>
@@ -55,6 +60,7 @@
       </table>
     </div>
     <div class="col-sm-12">
+
       <div class="sub-title">集荷元・お届け先</div>
       <table class="table table-bordered">
         <col span="1" style="background-color: #FFFFFF;">
@@ -80,7 +86,7 @@
           <input type="hidden" name="newPrefectureId" id="newPrefectureId" th:value="*{newPrefectureId}"/>
         </tr>
         <tr>
-          <th>お届け先住所（市区町村以下）</th>
+          <th>お届け先住所（市区町村以下）(半角英数字)</th>
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
         </tr>
@@ -89,6 +95,11 @@
     </div>
     <div class="col-sm-12">
       <div class="sub-title">お荷物情報</div>
+
+
+
+
+
         <table class="table table-bordered">
           <col span="1" style="background-color: #FFFFFF;">
           <col span="2" style="background-color: #FFFFFF;">

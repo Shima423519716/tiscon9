@@ -34,12 +34,12 @@
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
         </tr>
         <tr>
-          <th>連絡先TEL</th>
+          <th>連絡先TEL(ハイフンなし半角数字)</th>
           <td><span th:text="*{tel}"></span></td>
           <input type="hidden" name="tel" id="tel" th:value="*{tel}"/>
         </tr>
         <tr>
-          <th>連絡先メールアドレス</th>
+          <th>連絡先メールアドレス(ハイフンなし半角数字)</th>
           <td><span th:text="*{email}"></span></td>
           <input type="hidden" name="email" id="email" th:value="*{email}"/>
         </tr>
