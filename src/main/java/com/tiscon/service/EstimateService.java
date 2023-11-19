@@ -70,7 +70,13 @@ public class EstimateService {
      * @return 概算見積もり結果の料金
      */
     public Integer getPrice(UserOrderDto dto) {
-        double distance = estimateDAO.getDistance(dto.getOldPrefectureId(), dto.getNewPrefectureId());
+        double distance = 0;
+        String oldPrefectureId = dto.getOldPrefectureId();
+        String newPrefectureId = dto.getNewPrefectureId();
+        if(oldPrefectureId != newPrefectureId) {
+            distance = estimateDAO.getDistance(oldPrefectureId, newPrefectureId);
+        }
+
         // 小数点以下を切り捨てる
         int distanceInt = (int) Math.floor(distance);
 
