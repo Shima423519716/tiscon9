@@ -73,8 +73,10 @@ public class EstimateService {
         double distance = 0;
         String oldPrefectureId = dto.getOldPrefectureId();
         String newPrefectureId = dto.getNewPrefectureId();
-        if(oldPrefectureId != newPrefectureId) {
+        if(!oldPrefectureId.equals(newPrefectureId)) {
             distance = estimateDAO.getDistance(oldPrefectureId, newPrefectureId);
+        }else{
+            distance = 150;
         }
 
         // 小数点以下を切り捨てる
